@@ -1,6 +1,6 @@
 # Hopeflex E-commerce
 
-This is a simple example of an e-commerce application using Next.js, Supabase for the database and Stripe for payments. The project now includes a basic cart system, a checkout page with shipping calculation by CEP and an admin area protected by password.
+This is a simple example of an e-commerce application using Next.js, Supabase for the database and Stripe for payments. The project now includes a basic cart system, a checkout page with shipping calculation by CEP and an admin area protected by password. The frontend has been improved with a header, footer and styled product cards.
 
 ## Setup
 
