@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import Layout from '../components/Layout';
 import { CartContext } from '../components/cartContext';
 import Router from 'next/router';
 
@@ -26,22 +25,31 @@ export default function Checkout() {
   };
 
   return (
-    <Layout>
-      <h1>Checkout</h1>
+    <>
+      <h1 className="text-2xl font-bold mb-4">Checkout</h1>
       {cartItems.length === 0 && <p>Carrinho vazio</p>}
-      <ul>
+      <ul className="mb-4">
         {cartItems.map((item) => (
-          <li key={item.id}>{item.name} - ${(item.price / 100).toFixed(2)}</li>
+          <li key={item.id}>{item.name} - {(item.price / 100).toFixed(2)}</li>
         ))}
       </ul>
-      <div>
-        <input value={cep} onChange={(e) => setCep(e.target.value)} placeholder="CEP" />
-        <button onClick={calculateShipping}>Calcular Frete</button>
+      <div className="flex items-center gap-2 mb-4">
+        <input
+          value={cep}
+          onChange={(e) => setCep(e.target.value)}
+          placeholder="CEP"
+          className="border px-2 py-1 rounded"
+        />
+        <button onClick={calculateShipping} className="bg-blue-500 text-white px-4 py-1 rounded">
+          Calcular Frete
+        </button>
       </div>
-      {shipping && <p>{shipping}</p>}
+      {shipping && <p className="mb-4">{shipping}</p>}
       {cartItems.length > 0 && (
-        <button onClick={handlePayment}>Pagar</button>
+        <button onClick={handlePayment} className="bg-green-600 text-white px-4 py-2 rounded">
+          Pagar
+        </button>
       )}
-    </Layout>
+    </>
   );
 }

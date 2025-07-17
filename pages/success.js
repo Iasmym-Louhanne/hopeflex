@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
-import Layout from '../components/Layout';
 
 export async function getServerSideProps({ query }) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -35,9 +34,9 @@ export async function getServerSideProps({ query }) {
 
 export default function Success() {
   return (
-    <Layout>
-      <h1>Pagamento realizado com sucesso!</h1>
-      <Link href="/">Voltar à loja</Link>
-    </Layout>
+    <>
+      <h1 className="text-2xl font-bold mb-4">Pagamento realizado com sucesso!</h1>
+      <Link href="/" className="text-blue-600 underline">Voltar à loja</Link>
+    </>
   );
 }
