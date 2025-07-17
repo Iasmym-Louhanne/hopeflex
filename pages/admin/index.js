@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Router from 'next/router';
-import Layout from '../../components/Layout';
 
 export default function AdminLogin() {
   const [password, setPassword] = useState('');
@@ -16,13 +15,13 @@ export default function AdminLogin() {
   };
 
   return (
-    <Layout>
+      <>
       <h1>Admin Login</h1>
       <form onSubmit={handleSubmit}>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" />
         <button type="submit">Entrar</button>
       </form>
       {error && <p style={{color:'red'}}>{error}</p>}
-    </Layout>
+    </>
   );
 }
