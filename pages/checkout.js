@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
-import Layout from '../components/Layout';
-import { CartContext } from '../components/cartContext';
+import { CartContext } from '../contexts/CartContext';
 import Router from 'next/router';
 
 export default function Checkout() {
@@ -26,7 +25,7 @@ export default function Checkout() {
   };
 
   return (
-    <Layout>
+      <>
       <h1>Checkout</h1>
       {cartItems.length === 0 && <p>Carrinho vazio</p>}
       <ul>
@@ -42,6 +41,6 @@ export default function Checkout() {
       {cartItems.length > 0 && (
         <button onClick={handlePayment}>Pagar</button>
       )}
-    </Layout>
+    </>
   );
 }

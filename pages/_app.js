@@ -1,11 +1,14 @@
-import { CartProvider } from '../components/cartContext'; // Verifique se o caminho está correto
+import { CartProvider } from '../contexts/CartContext';
+import Layout from '../components/Layout';
 import '../public/style.css';
 
 
 export default function App({ Component, pageProps }) {
   return (
     <CartProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </CartProvider>
   );
 }

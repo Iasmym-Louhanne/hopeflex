@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
-import Layout from "../components/Layout";
 import { createClient } from '@supabase/supabase-js';
 
 export async function getServerSideProps() {
@@ -19,7 +18,7 @@ export async function getServerSideProps() {
 
 export default function Home({ products, error }) {
   return (
-    <Layout>
+      <>
       <h1 className="text-3xl font-bold my-4">Produtos</h1>
       {error && <p>{error}</p>}
       <div className="grid grid-cols-3 gap-4">
@@ -27,6 +26,6 @@ export default function Home({ products, error }) {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </Layout>
+      </>
   );
 }
