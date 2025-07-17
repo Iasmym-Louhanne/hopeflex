@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Router from 'next/router';
-import Layout from '../../components/Layout';
 
 export default function AdminLogin() {
   const [password, setPassword] = useState('');
@@ -16,13 +15,21 @@ export default function AdminLogin() {
   };
 
   return (
-    <Layout>
-      <h1>Admin Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" />
-        <button type="submit">Entrar</button>
+    <>
+      <h1 className="text-2xl font-bold mb-4">Admin Login</h1>
+      <form onSubmit={handleSubmit} className="space-x-2">
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Senha"
+          className="border px-2 py-1 rounded"
+        />
+        <button type="submit" className="bg-blue-500 text-white px-4 py-1 rounded">
+          Entrar
+        </button>
       </form>
-      {error && <p style={{color:'red'}}>{error}</p>}
-    </Layout>
+      {error && <p className="text-red-600 mt-2">{error}</p>}
+    </>
   );
 }
