@@ -1,6 +1,6 @@
 # Hopeflex E-commerce
 
-This is a simple example of an e-commerce application using Node.js, Express, Supabase for the database and Stripe for payments.
+This is a simple example of an e-commerce application using Next.js, Supabase for the database and Stripe for payments.
 
 ## Setup
 
@@ -9,10 +9,15 @@ This is a simple example of an e-commerce application using Node.js, Express, Su
    ```bash
    npm install
    ```
-3. Start the server:
+3. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 4. Navigate to `http://localhost:3000` to see the store.
+5. For production builds:
+   ```bash
+   npm run build
+   npm start
+   ```
 
 The `/admin` page provides a basic form to add products with price and stock.
