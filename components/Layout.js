@@ -1,5 +1,5 @@
 import React from "react";
-import { CartProvider } from "../contexts/CartContext";
+import { CartProvider } from "./cartContext";
 import Link from "next/link";
 
 const Layout = ({ children }) => {
