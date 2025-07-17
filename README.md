@@ -1,10 +1,10 @@
 # Hopeflex E-commerce
 
-This is a simple example of an e-commerce application using Next.js, Supabase for the database and Stripe for payments.
+This is a simple example of an e-commerce application using Next.js, Supabase for the database and Stripe for payments. The project now includes a basic cart system, a checkout page with shipping calculation by CEP and an admin area protected by password.
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and fill in your Stripe and Supabase credentials.
+1. Configure o arquivo `.env.local` com suas chaves do Stripe e Supabase e defina `NEXT_PUBLIC_ADMIN_PASS`.
 2. Install dependencies:
    ```bash
    npm install
@@ -20,4 +20,6 @@ This is a simple example of an e-commerce application using Next.js, Supabase fo
    npm start
    ```
 
-The `/admin` page provides a basic form to add products with price and stock.
+To access the admin panel navigate to `/admin` and use the password defined in `NEXT_PUBLIC_ADMIN_PASS` in the `.env.local` file. From the panel you can cadastrar novos produtos.
+
+The `sql/schema.sql` file contains example SQL to create the required tables for products, orders and admin users.
