@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function Cancel() {
   return (
-    <div>
-      <h1>Payment cancelled</h1>
-      <Link href="/">Return to store</Link>
-    </div>
+    <Layout>
+      <h1>Pagamento cancelado</h1>
+      <Link href="/">Voltar à loja</Link>
+    </Layout>
   );
 }
